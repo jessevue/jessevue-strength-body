@@ -57,6 +57,14 @@
         font-weight: bold;
         animation: pulse 2s infinite;
         color: white;
+        overflow: hidden;
+    }
+    
+    .profile-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
     }
     
     .hero h1 {
@@ -230,8 +238,28 @@
         margin: 20px;
         box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         text-align: center;
-        max-width: 500px;
+        max-width: 800px;
         margin: 20px auto;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        text-align: left;
+    }
+    
+    .testimonial-content {
+        flex: 1;
+    }
+    
+    .testimonial-photo {
+        flex-shrink: 0;
+    }
+    
+    .testimonial-photo img {
+        width: 200px;
+        height: 200px;
+        border-radius: 15px;
+        object-fit: cover;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     }
     
     .testimonial-text {
@@ -242,9 +270,38 @@
         font-style: italic;
     }
     
-    .testimonial-author {
+    .testimonial-images {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin: 30px 0;
+        flex-wrap: wrap;
+    }
+    
+    .before-after {
+        text-align: center;
+    }
+    
+    .before-after img {
+        width: 180px;
+        height: 240px;
+        object-fit: cover;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+    
+    .before-after img:hover {
+        transform: scale(1.05);
+    }
+    
+    .before-after span {
+        display: block;
+        margin-top: 10px;
         font-weight: bold;
         color: #333;
+        text-transform: uppercase;
+        letter-spacing: 1px;
     }
     
     /* Contact Section */
@@ -362,6 +419,16 @@
         .contact-grid {
             grid-template-columns: 1fr;
         }
+        
+        .testimonial-card {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .testimonial-photo img {
+            width: 150px;
+            height: 150px;
+        }
     }
 </style>
 ```
@@ -372,7 +439,13 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="profile-image">JV</div>
+                <!-- Replace JV with your actual photo -->
+                <div class="profile-image">
+                    <!-- Option 1: Use your photo (recommended) -->
+                    <img src="profile.jpg" alt="Jesse Vue" style="display: none;">
+                    <!-- Option 2: Keep initials until you upload photo -->
+                    JV
+                </div>
                 <h1>Jesse Vue</h1>
                 <p class="tagline">Certified Personal Trainer | Strength & Fat Loss Specialist</p>
 
@@ -430,18 +503,6 @@
                 <h3>Fat Loss Specialist</h3>
                 <p>Effective fat loss strategies combining strength training, cardio, and nutrition to help you achieve a lean, strong physique.</p>
             </div>
-            
-            <div class="service-card">
-                <div class="service-icon">📱</div>
-                <h3>App-Based Coaching</h3>
-                <p>Track your progress with my custom app featuring workout logs, progress photos, and direct messaging for support.</p>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon">🎯</div>
-                <h3>Goal-Focused Programs</h3>
-                <p>Whether you want to lose weight, build muscle, or improve performance, I create specific programs to reach your targets.</p>
-            </div>
         </div>
     </div>
 </section>
@@ -452,8 +513,14 @@
         <h2 class="section-title">Success Stories</h2>
         
         <div class="testimonial-card">
-            <p class="testimonial-text">"12 weeks ago I sat down with @jolly_lifts and decided to make some changes. Changes in diet, exercise, habits, and attitude. He pushed me to be my best and held me accountable. Just like a friend would. The journey is far from over, but it feels great to feel great about myself again. I'm strong, happy, and FINALLY comfortable in my own skin. I've also realized that I enjoy these new changes and habits. I look forward to seeing what I can accomplish in the next 12 weeks and beyond…"</p>
-            <div class="testimonial-author">- Bill Byers</div>
+            <div class="testimonial-content">
+                <p class="testimonial-text">"12 weeks ago I sat down with @jolly_lifts and decided to make some changes. Changes in diet, exercise, habits, and attitude. He pushed me to be my best and held me accountable. Just like a friend would. The journey is far from over, but it feels great to feel great about myself again. I'm strong, happy, and FINALLY comfortable in my own skin. I've also realized that I enjoy these new changes and habits. I look forward to seeing what I can accomplish in the next 12 weeks and beyond…"</p>
+                <div class="testimonial-author">- Bill Byers</div>
+            </div>
+            
+            <div class="testimonial-photo">
+                <img src="knockout.jpg" alt="Jesse Vue Training">
+            </div>
         </div>
     </div>
 </section>
